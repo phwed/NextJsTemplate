@@ -6,9 +6,11 @@ import { Button } from "@nextui-org/react";
 import Table from "../shared/Table";
 import { Add, Edit, Eye, Trash } from "iconsax-react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function Transactions() {
   const [selected, setSelected] = React.useState(2);
+  const theme = useTheme()
 
   const transactions = [
     {
@@ -82,6 +84,7 @@ export default function Transactions() {
             // @ts-ignore
             data={transactions}
             // @ts-ignore
+            theme = {theme}
             columns={
               [
                 {
